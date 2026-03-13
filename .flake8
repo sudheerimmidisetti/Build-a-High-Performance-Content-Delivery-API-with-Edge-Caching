@@ -1,0 +1,9 @@
+[flake8]
+exclude =
+    node_modules,
+    .git,
+    __pycache__,
+    coverage,
+    dist,
+    build
+max-line-length = 79
