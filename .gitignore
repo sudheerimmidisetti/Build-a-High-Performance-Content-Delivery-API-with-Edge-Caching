@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Environment files (keep example file)
+.env
+.env.*
+!.env.example
+
+# Test and coverage outputs
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs and runtime artifacts
+logs/
+*.log
+pids/
+*.pid
+*.pid.lock
+
+# Build output and temp files
+dist/
+build/
+.tmp/
+temp/
+
+# OS and editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker local overrides
+docker-compose.override.yml
