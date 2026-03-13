@@ -1,0 +1,9 @@
+setup:
+  - command: "cp .env.example .env"
+  - command: "docker compose up --build -d"
+
+test:
+  - command: "docker compose exec -T app npm test"
+
+benchmark:
+  - command: "docker compose exec -T app python scripts/run_benchmark.py"
