@@ -1,0 +1,49 @@
+{
+  "name": "edge-caching-content-api",
+  "version": "1.0.0",
+  "description": "High-performance content delivery API with edge caching support",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "node src/models/migrate-cli.js",
+    "test": "jest --runInBand --coverage",
+    "test:watch": "jest --watch",
+    "benchmark": "python scripts/run_benchmark.py",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.883.0",
+    "@fastify/multipart": "^9.0.3",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.0.0",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.0.3",
+    "form-data": "^4.0.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "pg-mem": "^3.0.5",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js",
+      "!src/models/migrate-cli.js",
+      "!src/storage/**/*.js",
+      "!src/services/cdnPurgeService.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 55,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    }
+  }
+}
